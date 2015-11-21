@@ -13,6 +13,7 @@ type WorkoutResponse struct {
 	DeltaPoints []ImagePointDeltas   `json:"deltaPoints"`
 	Title       string               `json:"title"`
 	Body        string               `json:"body"`
+	TimeSpentS  int64                `json:"timeSpentSeconds"`
 	CreatedAt   time.Time            `json:"createdAt"`
 	UpdatedAt   time.Time            `json:"updatedAt"`
 }
