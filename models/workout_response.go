@@ -6,6 +6,8 @@ type WorkoutResponse struct {
 	Id          int64                `json:"id"`
 	Endpoint    string               `json:"endpoint"`
 	ApiEndpoint string               `json:"apiEndpoint"`
+	PreImage    string               `json:"preImageUrl"`
+	PostImage   string               `json:"postImageUrl"`
 	PrePoints   []ImagePointResponse `json:"prePoints"`
 	PostPoints  []ImagePointResponse `json:"postPoints"`
 	DeltaPoints []ImagePointDeltas   `json:"deltaPoints"`

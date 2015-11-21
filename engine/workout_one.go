@@ -17,6 +17,8 @@ func WorkoutOne(req models.WorkoutRequest) (models.WorkoutResponse, error) {
 	resp.DeltaPoints = models.FindDeltasForSetOfPoints(resp.PrePoints, resp.PostPoints)
 	populateWorkoutOneBody(&resp)
 	populateWorkoutOneTitle(&resp)
+	resp.PreImage = req.PreImage.ImageURL
+	resp.PostImage = req.PostImage.ImageURL
 	return resp, nil
 }
 
