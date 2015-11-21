@@ -2,23 +2,20 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	"gopkg.in/redis.v3"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var db *gorm.DB
-var cache *redis.Client
 
 func Setup() error {
 	InitializeConfig()
-	/*
-		db, err := gorm.Open("mysql", GlobalConfig.DBPath)
-		if err != nil {
-			return err
-		}
-		db.DB().SetMaxIdleConns(10)
-		db.DB().SetMaxOpenConns(100)
-		db.LogMode(true)
-		db.SingularTable(true)
-	*/
+	tempDb, err := gorm.Open("sqlite3", "./gorm.db")
+	db = &tempDb
+	if err != nil {
+		return err
+	}
+	db.LogMode(true)
+	db.SingularTable(true)
+	db.CreateTable(&Workout{})
 	return nil
 }

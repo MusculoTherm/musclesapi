@@ -12,6 +12,7 @@ func CreateRouter() http.Handler {
 	apiV0Router = apiV0Router.StrictSlash(true)
 	apiV0Router.HandleFunc("/", Use(api.V0_API)).Methods("GET")
 	apiV0Router.HandleFunc("/workouts", Use(api.V0_API_Create_Workout)).Methods("POST")
+	apiV0Router.HandleFunc("/workouts/{workoutId}", Use(api.V0_API_Get_Workout)).Methods("GET")
 	apiV0Router.HandleFunc("/uploads", Use(api.V0_API_Upload_Artwork)).Methods("POST")
 	router.HandleFunc("/workouts", ServeWorkout).Methods("GET")
 	uploadsFS := http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads/")))

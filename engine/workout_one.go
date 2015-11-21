@@ -1,6 +1,8 @@
 package engine
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/MusculoTherm/musclesapi/models"
 	"github.com/MusculoTherm/musclesapi/statistics"
 	"sort"
@@ -41,5 +43,10 @@ func populateWorkoutOneTitle(req *models.WorkoutResponse) {
 }
 
 func populateWorkoutOneBody(req *models.WorkoutResponse) {
-	req.Body = "Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum"
+	b, _ := json.Marshal(req.PrePoints)
+	req.Body += fmt.Sprintf("Pre: %s ", string(b))
+	b, _ = json.Marshal(req.PostPoints)
+	req.Body += fmt.Sprintf("||||Post: %s ", string(b))
+	b, _ = json.Marshal(req.PostPoints)
+	req.Body += fmt.Sprintf("||||Deltas: %s ", string(b))
 }
