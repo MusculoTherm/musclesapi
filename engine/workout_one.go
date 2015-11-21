@@ -1,6 +1,11 @@
 package engine
 
-import "github.com/MusculoTherm/musclesapi/models"
+import (
+	"fmt"
+	"github.com/MusculoTherm/musclesapi/models"
+	"github.com/MusculoTherm/musclesapi/statistics"
+	"sort"
+)
 
 var workoutOnePoints []string = []string{"L0", "L1", "L2", "L3", "L4", "L5", "R0", "R1", "R2", "R3", "R4", "R5"}
 
@@ -15,13 +20,18 @@ func WorkoutOne(req models.WorkoutRequest) (models.WorkoutResponse, error) {
 func calculateWorkoutOneImage(req models.ImageDetailsRequest) []models.ImagePointResponse {
 	resp := models.MirrorImagePointRequestsToResponses(req.Points)
 	for ind, p := range resp {
-		resp[ind].MaxTemp = maxTempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
-		resp[ind].MinTemp = minTempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
-		resp[ind].Q1Temp = q1TempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
-		resp[ind].Q3Temp = q3TempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
-		resp[ind].MeanTemp = meanTempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
-		resp[ind].MedianTemp = medianTempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
-		resp[ind].IQR = iqrTempForPoint(p.X, p.Y, p.Radius, req.TempsMat)
+		points64Unsorted := statistics.GetElementsWithinRadius(int(p.X), int(p.Y), int(p.Radius), req.TempsMat)
+		points32 := statistics.I64ToI(points64Unsorted)
+		sort.Ints(points32)
+		points := statistics.IToI64(points32)
+		fmt.Println("POINTS:", points)
+		resp[ind].MaxTemp = maxTempForPoint(points)
+		resp[ind].MinTemp = minTempForPoint(points)
+		resp[ind].Q1Temp = q1TempForPoint(points)
+		resp[ind].Q3Temp = q3TempForPoint(points)
+		resp[ind].MeanTemp = meanTempForPoint(points)
+		resp[ind].MedianTemp = medianTempForPoint(points)
+		resp[ind].IQR = iqrTempForPoint(points)
 	}
 	return resp
 }

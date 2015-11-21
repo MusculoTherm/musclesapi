@@ -15,3 +15,19 @@ func getColumn(input [][]float64, index int) []float64 {
 	}
 	return output
 }
+
+func I64ToI(in []int64) []int {
+	out := make([]int, len(in))
+	for ind, i := range in {
+		out[ind] = int(i)
+	}
+	return out
+}
+
+func IToI64(in []int) []int64 {
+	out := make([]int64, len(in))
+	for ind, i := range in {
+		out[ind] = int64(i)
+	}
+	return out
+}
