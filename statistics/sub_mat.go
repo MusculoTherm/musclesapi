@@ -8,9 +8,9 @@ func GetElementsWithinRadius(xCenter int, yCenter int, radius int, mat [][]int64
 		for y := yCenter - radius; y <= yCenter; y++ {
 			if (x-xCenter)*(x-xCenter)+(y-yCenter)*(y-yCenter) < radius*radius {
 				if y > -1 && x > -1 && y < len(mat) && x < len(mat[y]) {
-					if mat[y][x] > 305 {
+					//if mat[y][x] > 305 {
 						out = append(out, mat[y][x])
-					}
+					//}
 				}
 			}
 		}
