@@ -18,6 +18,7 @@ func V0_API_Create_Workout(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
+	wReq.Parse()
 	resp, err := engine.Execute()
 	if err != nil {
 		failFormat := models.Response{Success: false, Debug: "Internal Server Error", Message: "Workout Failure"}
