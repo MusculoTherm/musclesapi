@@ -50,19 +50,19 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	for _, p := range req.DeltaPoints {
 		sumIncreased += p.MedianTemp
 	}
-	meanIncrease := statistics.Round(float64(sumIncreased) / float64(len(req.DeltaPoints)))
-	sumMins := req.PrePoints[0].MinTemp
-	for _, p := range req.DeltaPoints {
-		sumMins += p.MinTemp
+	meanIncrease := float64(sumIncreased) / float64(len(req.DeltaPoints))
+	var sumMins int64
+	for _, p := range req.PrePoints {
+		sumMins += p.MinTemp - 273
 	}
-	meanMins := statistics.Round(float64(sumMins) / float64(len(req.PrePoints)))
-	sumMaxs := req.PrePoints[0].MaxTemp
+	meanMins := float64(sumMins) / float64(len(req.PrePoints))
+	var sumMaxs int64
 	for _, p := range req.PostPoints {
-		sumMins += p.MaxTemp
+		sumMaxs += p.MaxTemp - 273
 	}
-	meanMaxs := statistics.Round(float64(sumMaxs) / float64(len(req.PostPoints)))
+	meanMaxs := float64(sumMaxs) / float64(len(req.PostPoints))
 	req.Body += "Woah! What a great work out! The overall temperature of your targeted muscles increased by "
-	req.Body += fmt.Sprintf("%d˚C, from %d˚ to %d˚. ", meanIncrease-273, meanMins-273, meanMaxs-273)
+	req.Body += fmt.Sprintf("%.2f˚C, from %.2f˚C to %.2f˚C. ", meanIncrease, meanMins, meanMaxs)
 	lMedians := make([]int64, 6)
 	rMedians := make([]int64, 6)
 	for _, p := range req.PostPoints {
@@ -88,7 +88,7 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	}
 	diffAchilles := lMedians[5] - rMedians[5]
 	if diffAchilles > -3 && diffAchilles < 3 {
-		req.Body += fmt.Sprintf("On the other hand, your achilles are of nearly the same temperature. ")
+		req.Body += fmt.Sprintf("On the other hand, your achilles are both of nearly the same temperature. ")
 	}
 	if (float64((lMedians[0]+lMedians[1]))/2.0+float64((rMedians[0]+rMedians[1]))/2.0)/2.0 > (float64((lMedians[2]+lMedians[3]+lMedians[4]))/2.0+float64((rMedians[2]+rMedians[3]+rMedians[4]))/2.0)/2.0 {
 		req.Body += fmt.Sprintf("During your work out, you warmed up your calves more than your hamstrings. Good job, if this was your goal, if not, work on targeting your hamstrings with some hamstring curls, or Romanian deadlift. ")
@@ -96,7 +96,7 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 		req.Body += fmt.Sprintf("During your work out, you warmed up your hamstrings more than your calves. Good job, if this was your goal, if not, work on targeting your calves more with some calf raises. ")
 	}
 	if req.TimeSpentS < 60 {
-		req.Body += fmt.Sprintf("Next time, spend more time working out! You only worked out for 60 seconds, try for a few minutes next time! ")
+		req.Body += fmt.Sprintf("Next time, spend more time working out! You worked out for less 60 seconds. Next time try to do it for a few minutes! ")
 	} else if req.TimeSpentS < 150 {
 		req.Body += fmt.Sprintf("For spending less than two and a half minutes working out, this wasn't bad, next time try for a few minutes! ")
 	} else {
