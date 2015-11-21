@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"fmt"
 	"github.com/MusculoTherm/musclesapi/models"
 	"github.com/MusculoTherm/musclesapi/statistics"
 	"sort"
@@ -14,6 +13,8 @@ func WorkoutOne(req models.WorkoutRequest) (models.WorkoutResponse, error) {
 	resp.PostPoints = calculateWorkoutOneImage(req.PostImage)
 	resp.PrePoints = calculateWorkoutOneImage(req.PreImage)
 	resp.DeltaPoints = models.FindDeltasForSetOfPoints(resp.PrePoints, resp.PostPoints)
+	populateWorkoutOneBody(&resp)
+	populateWorkoutOneTitle(&resp)
 	return resp, nil
 }
 
@@ -24,7 +25,6 @@ func calculateWorkoutOneImage(req models.ImageDetailsRequest) []models.ImagePoin
 		points32 := statistics.I64ToI(points64Unsorted)
 		sort.Ints(points32)
 		points := statistics.IToI64(points32)
-		fmt.Println("POINTS:", points)
 		resp[ind].MaxTemp = maxTempForPoint(points)
 		resp[ind].MinTemp = minTempForPoint(points)
 		resp[ind].Q1Temp = q1TempForPoint(points)
@@ -34,4 +34,12 @@ func calculateWorkoutOneImage(req models.ImageDetailsRequest) []models.ImagePoin
 		resp[ind].IQR = iqrTempForPoint(points)
 	}
 	return resp
+}
+
+func populateWorkoutOneTitle(req *models.WorkoutResponse) {
+	req.Title = "This is the Title"
+}
+
+func populateWorkoutOneBody(req *models.WorkoutResponse) {
+	req.Body = "Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum"
 }

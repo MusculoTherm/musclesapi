@@ -6,6 +6,18 @@ import (
 	"sort"
 )
 
+func MedianOfSortedInts(orig []int64) int64 {
+	input := I64ToF64(orig)
+	l := len(input)
+	if l%2 == 0 {
+		tmp, _ := Mean(input[l/2-1 : l/2+1])
+		return Round(tmp)
+	} else {
+		tmp := float64(input[l/2])
+		return Round(tmp)
+	}
+}
+
 func Median(input []float64) (median float64, err error) {
 	c := copyslice(input)
 	sort.Float64s(c)

@@ -21,6 +21,7 @@
       <root url="file://$PROJECT_DIR$/../../MiQ-Inc/goalgos/.git" />
       <root url="file://$PROJECT_DIR$/../../../gopkg.in/redis.v2/testdata" />
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/tools/go/callgraph/cha/testdata" />
+      <root url="file://$PROJECT_DIR$/../../grd/statistics/.git" />
       <root url="file://$PROJECT_DIR$/../../MiQ-Inc/squirrel-god/.git" />
       <root url="file://$PROJECT_DIR$/../../gorilla/handlers/.git" />
       <root url="file://$PROJECT_DIR$/../../samegoal/wcchat/.git" />

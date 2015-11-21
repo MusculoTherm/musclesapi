@@ -31,3 +31,19 @@ func IToI64(in []int) []int64 {
 	}
 	return out
 }
+
+func I64ToF64(in []int64) []float64 {
+	out := make([]float64, len(in))
+	for ind, i := range in {
+		out[ind] = float64(i)
+	}
+	return out
+}
+
+func F64ToI64(in []float64) []int64 {
+	out := make([]int64, len(in))
+	for ind, i := range in {
+		out[ind] = Round(i)
+	}
+	return out
+}
