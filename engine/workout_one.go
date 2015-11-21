@@ -86,7 +86,7 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	} else {
 		req.Body += fmt.Sprintf("You also worked your left calves a bit harder than your right calves. ")
 	}
-	diffAchilles := lMedians[5] - lMedians[6]
+	diffAchilles := lMedians[5] - rMedians[5]
 	if diffAchilles > -3 && diffAchilles < 3 {
 		req.Body += fmt.Sprintf("On the other hand, your achilles are of nearly the same temperature. ")
 	}
