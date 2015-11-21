@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 
+	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -18,6 +19,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Listening @", *addr)
 	err = http.ListenAndServe(*addr, controllers.CreateRouter())
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/gorilla/mux"
 	"github.com/MusculoTherm/musclesapi/controllers/api"
+	"github.com/gorilla/mux"
 	"net/http"
 )
 
