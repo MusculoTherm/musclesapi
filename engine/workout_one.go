@@ -6,6 +6,7 @@ import (
 	"github.com/MusculoTherm/musclesapi/statistics"
 	"sort"
 	"strconv"
+"math"
 )
 
 var workoutOnePoints []string = []string{"L0", "L1", "L2", "L3", "L4", "L5", "R0", "R1", "R2", "R3", "R4", "R5"}
@@ -62,7 +63,7 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	}
 	meanMaxs := float64(sumMaxs) / float64(len(req.PostPoints))
 	req.Body += "Woah! What a great work out! The overall temperature of your targeted muscles increased by "
-	req.Body += fmt.Sprintf("%.2f˚C, from %.2f˚C to %.2f˚C. ", meanIncrease, meanMins, meanMaxs)
+	req.Body += fmt.Sprintf("%.2f˚C, from %.2f˚C to %.2f˚C. ", math.Abs(meanIncrease), meanMins, meanMaxs)
 	lMedians := make([]int64, 6)
 	rMedians := make([]int64, 6)
 	for _, p := range req.PostPoints {
@@ -96,7 +97,7 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 		req.Body += fmt.Sprintf("During your work out, you warmed up your hamstrings more than your calves. Good job, if this was your goal, if not, work on targeting your calves more with some calf raises. ")
 	}
 	if req.TimeSpentS < 60 {
-		req.Body += fmt.Sprintf("Next time, spend more time working out! You worked out for less 60 seconds. Next time try to do it for a few minutes! ")
+		req.Body += fmt.Sprintf("Spend more time working out! You worked out for less 60 seconds, so next time try to do it for a few minutes! ")
 	} else if req.TimeSpentS < 150 {
 		req.Body += fmt.Sprintf("For spending less than two and a half minutes working out, this wasn't bad, next time try for a few minutes! ")
 	} else {
