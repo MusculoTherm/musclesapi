@@ -17,8 +17,8 @@ func CreateRouter() http.Handler {
 	router.HandleFunc("/workouts/{workoutId}", ServeWorkout).Methods("GET")
 	uploadsFS := http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads/")))
 	router.PathPrefix("/uploads/").Handler(uploadsFS)
-	fs := http.StripPrefix("/", http.FileServer(http.Dir("./static/")))
-	router.PathPrefix("/").Handler(fs)
+	fs := http.StripPrefix("/workouts/", http.FileServer(http.Dir("./static/")))
+	router.PathPrefix("/workouts").Handler(fs)
 	return router
 }
 

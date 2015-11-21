@@ -1,26 +1,18 @@
 package controllers
 
 import (
-	"net/http"
-	"html/template"
-	"github.com/gorilla/mux"
-	"strconv"
-"github.com/MusculoTherm/musclesapi/models"
 	"fmt"
-"github.com/MusculoTherm/musclesapi/controllers/api"
+	"github.com/MusculoTherm/musclesapi/controllers/api"
+	"github.com/MusculoTherm/musclesapi/models"
+	"github.com/gorilla/mux"
+	"html/template"
+	"net/http"
+	"strconv"
 )
 
 var workoutTempl = template.Must(template.ParseFiles("templates/workout.html"))
 
 func ServeWorkout(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		http.Error(w, "Not found", 404)
-		return
-	}
-	if r.Method != "GET" {
-		http.Error(w, "Method not allowed", 405)
-		return
-	}
 	vars := mux.Vars(r)
 	wIdStr := vars["workoutId"]
 	wId, err := strconv.ParseInt(wIdStr, 10, 64)
@@ -37,5 +29,5 @@ func ServeWorkout(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	homeTempl.Execute(w, pl)
+	workoutTempl.Execute(w, pl)
 }
