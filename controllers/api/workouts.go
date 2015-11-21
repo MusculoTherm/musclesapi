@@ -19,7 +19,7 @@ func V0_API_Create_Workout(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	wReq.Parse()
-	resp, err := engine.Execute()
+	resp, err := engine.Execute(wReq)
 	if err != nil {
 		failFormat := models.Response{Success: false, Debug: "Internal Server Error", Message: "Workout Failure"}
 		JSONResponse(w, failFormat, 500)

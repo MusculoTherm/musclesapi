@@ -8,8 +8,13 @@ type WorkoutRequest struct {
 }
 
 func (req *WorkoutRequest) Parse() {
-	h := int(req.PostImage.Height)
-	w := int(req.PostImage.Width)
+	req.PostImage.TempsMat = parseImageToMat(req.PostImage)
+	req.PreImage.TempsMat = parseImageToMat(req.PreImage)
+}
+
+func parseImageToMat(r ImageDetailsRequest) [][]int64 {
+	h := int(r.Height)
+	w := int(r.Width)
 	tempMat := make([][]int64, h)
 	for i := 0; i < h; i++ {
 		tempMat[i] = make([]int64, w)
@@ -17,9 +22,9 @@ func (req *WorkoutRequest) Parse() {
 	pos := 0
 	for i := 0; i < h; i++ {
 		for j := 0; j < w; j++ {
-			tempMat[i][j] = req.PostImage.Temps[pos]
+			tempMat[i][j] = r.Temps[pos]
 			pos++
 		}
 	}
-	req.PostImage.TempsMat = tempMat
+	return tempMat
 }
