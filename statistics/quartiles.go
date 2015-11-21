@@ -13,6 +13,8 @@ func GetQ1FromSortedInts(orig []int64) int64 {
 }
 
 func GetQ3FromSortedInts(orig []int64) int64 {
-	//TODO
-	return GetQ1FromSortedInts(orig)
+	ind1 := int(float64(len(orig)) * 0.75)
+	ind2 := int(float64(len(orig))*0.75 + 1.0)
+	m, _ := Mean(I64ToF64(orig[ind1:ind2]))
+	return Round(m)
 }

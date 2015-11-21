@@ -21,7 +21,6 @@ func MedianOfSortedInts(orig []int64) int64 {
 func Median(input []float64) (median float64, err error) {
 	c := copyslice(input)
 	sort.Float64s(c)
-
 	l := len(c)
 	if l == 0 {
 		return 0, errors.New("Input must not be empty")

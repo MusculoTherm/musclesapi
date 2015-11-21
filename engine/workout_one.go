@@ -37,7 +37,7 @@ func calculateWorkoutOneImage(req models.ImageDetailsRequest) []models.ImagePoin
 }
 
 func populateWorkoutOneTitle(req *models.WorkoutResponse) {
-	req.Title = "This is the Title"
+	req.Title = "Good Job, Mate!"
 }
 
 func populateWorkoutOneBody(req *models.WorkoutResponse) {

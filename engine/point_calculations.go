@@ -1,4 +1,5 @@
 package engine
+
 import (
 	"github.com/MusculoTherm/musclesapi/statistics"
 )
@@ -40,7 +41,7 @@ func meanTempForPoint(arr []int64) int64 {
 	for _, i := range arr {
 		sum += float64(i)
 	}
-	return statistics.Round(sum/float64(len(arr)))
+	return statistics.Round(sum / float64(len(arr)))
 }
 
 func iqrTempForPoint(arr []int64) int64 {

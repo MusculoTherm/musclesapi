@@ -12,12 +12,11 @@ func CreateRouter() http.Handler {
 	apiV0Router = apiV0Router.StrictSlash(true)
 	apiV0Router.HandleFunc("/", Use(api.V0_API)).Methods("GET")
 	apiV0Router.HandleFunc("/workouts", Use(api.V0_API_Create_Workout)).Methods("POST")
-	router.HandleFunc("/workouts", ServeWorkout)
+	apiV0Router.HandleFunc("/uploads", Use(api.V0_API_Upload_Artwork)).Methods("POST")
+	router.HandleFunc("/workouts", ServeWorkout).Methods("GET")
+	uploadsFS := http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads/")))
+	router.PathPrefix("/uploads/").Handler(uploadsFS)
 	router.HandleFunc("/", ServeHome)
-	//bowerfs := http.StripPrefix("/bower_components/", http.FileServer(http.Dir("./bower_components/")))
-	//router.PathPrefix("/bower_components/").Handler(bowerfs)
-	//fs := http.StripPrefix("/", http.FileServer(http.Dir("./static/")))
-	//router.PathPrefix("/").Handler(fs)
 	return router
 }
 
