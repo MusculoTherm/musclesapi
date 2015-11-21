@@ -10,6 +10,7 @@ var cache *redis.Client
 
 func Setup() error {
 	InitializeConfig()
+	/*
 	db, err := gorm.Open("mysql", GlobalConfig.DBPath)
 	if err != nil {
 		return err
@@ -18,5 +19,6 @@ func Setup() error {
 	db.DB().SetMaxOpenConns(100)
 	db.LogMode(true)
 	db.SingularTable(true)
+	*/
 	return nil
 }

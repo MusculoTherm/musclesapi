@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76688a76-9820-484e-b431-12e8bf4a7813" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/img_point_deltas.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/engine/point_calculations.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/engine/workout_one.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/engine.go" afterPath="$PROJECT_DIR$/engine/engine.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/img_details_request.go" afterPath="$PROJECT_DIR$/models/img_details_request.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/img_point_request.go" afterPath="$PROJECT_DIR$/models/img_point_request.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/img_point_response.go" afterPath="$PROJECT_DIR$/models/img_point_response.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/workout_request.go" afterPath="$PROJECT_DIR$/models/workout_request.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/workout_response.go" afterPath="$PROJECT_DIR$/models/workout_response.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/api/workouts.go" afterPath="$PROJECT_DIR$/controllers/api/workouts.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/models.go" afterPath="$PROJECT_DIR$/models/models.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="musclesapi.iws" />
@@ -54,12 +45,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workout_response.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workout_response.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/workout_response.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27972028">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/models.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6293706">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+              <folding>
+                <marker date="1448099025000" expanded="true" signature="158:365" placeholder="/*...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +130,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/models/config.go" />
-        <option value="$PROJECT_DIR$/models/models.go" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controllers/routes.go" />
         <option value="$PROJECT_DIR$/controllers/home.go" />
@@ -147,6 +149,7 @@
         <option value="$PROJECT_DIR$/engine/workout_one.go" />
         <option value="$PROJECT_DIR$/models/img_point_deltas.go" />
         <option value="$PROJECT_DIR$/models/workout_response.go" />
+        <option value="$PROJECT_DIR$/models/models.go" />
       </list>
     </option>
   </component>
@@ -623,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/models.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27972028">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/api_response.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -761,9 +756,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/workout_response.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27972028">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6293706">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <marker date="1448099025000" expanded="true" signature="158:365" placeholder="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
