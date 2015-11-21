@@ -14,10 +14,11 @@ func CreateRouter() http.Handler {
 	apiV0Router.HandleFunc("/workouts", Use(api.V0_API_Create_Workout)).Methods("POST")
 	apiV0Router.HandleFunc("/workouts/{workoutId}", Use(api.V0_API_Get_Workout)).Methods("GET")
 	apiV0Router.HandleFunc("/uploads", Use(api.V0_API_Upload_Artwork)).Methods("POST")
-	router.HandleFunc("/workouts", ServeWorkout).Methods("GET")
+	router.HandleFunc("/workouts/{workoutId}", ServeWorkout).Methods("GET")
 	uploadsFS := http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads/")))
 	router.PathPrefix("/uploads/").Handler(uploadsFS)
-	router.HandleFunc("/", ServeHome)
+	fs := http.StripPrefix("/", http.FileServer(http.Dir("./static/")))
+	router.PathPrefix("/").Handler(fs)
 	return router
 }
 
