@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/MusculoTherm/musclesapi/engine"
 	"github.com/MusculoTherm/musclesapi/models"
 	"net/http"
 )
@@ -17,7 +18,13 @@ func V0_API_Create_Workout(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
-	resp := models.WorkoutResponse{}
+	resp, err := engine.Execute()
+	if err != nil {
+		failFormat := models.Response{Success: false, Debug: "Internal Server Error", Message: "Workout Failure"}
+		JSONResponse(w, failFormat, 500)
+		fmt.Println(err)
+		return
+	}
 	success := models.Response{Success: true, Data: resp, Message: "Workout Success"}
 	JSONResponse(w, success, 200)
 }
