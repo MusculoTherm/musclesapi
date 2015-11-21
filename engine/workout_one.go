@@ -63,7 +63,7 @@ func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	}
 	meanMaxs := float64(sumMaxs) / float64(len(req.PostPoints))
 	req.Body += "Woah! What a great work out! The overall temperature of your targeted muscles increased by "
-	req.Body += fmt.Sprintf("%.2f˚C, from %.2f˚C to %.2f˚C. ", math.Abs(meanIncrease), meanMins, meanMaxs)
+	req.Body += fmt.Sprintf("an average of %.2f˚C, with extremes of %.2f˚C to %.2f˚C. ", math.Abs(meanIncrease), meanMins, meanMaxs)
 	lMedians := make([]int64, 6)
 	rMedians := make([]int64, 6)
 	for _, p := range req.PostPoints {
