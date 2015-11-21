@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76688a76-9820-484e-b431-12e8bf4a7813" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/statistics/sub_mat.go" afterPath="$PROJECT_DIR$/statistics/sub_mat.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/workout_one.go" afterPath="$PROJECT_DIR$/engine/workout_one.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/workout_response.go" afterPath="$PROJECT_DIR$/models/workout_response.go" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gorm.db" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="musclesapi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,14 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="workout_one.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workout_one.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33566433">
+            <state vertical-scroll-proportion="0.0">
               <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
               <folding>
                 <element signature="e#16#152#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.07462686">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,18 +134,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_types.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/content_types.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding>
-                <element signature="e#15#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -156,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controllers/home.go" />
         <option value="$PROJECT_DIR$/controllers/api/api.go" />
         <option value="$PROJECT_DIR$/models/Dimensions.go" />
@@ -187,6 +184,7 @@
         <option value="$PROJECT_DIR$/statistics/sub_mat.go" />
         <option value="$PROJECT_DIR$/models/workout_response.go" />
         <option value="$PROJECT_DIR$/engine/workout_one.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -645,14 +643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03731343">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/api/api.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16079633">
@@ -911,11 +901,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33566433">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
             <element signature="e#16#152#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07462686">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
