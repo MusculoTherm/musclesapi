@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76688a76-9820-484e-b431-12e8bf4a7813" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/workout_one.go" afterPath="$PROJECT_DIR$/engine/workout_one.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/workout.html" afterPath="$PROJECT_DIR$/templates/workout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="musclesapi.iws" />
@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="workout_one.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workout_one.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12587413">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
               <folding>
                 <element signature="e#16#154#0" expanded="true" />
               </folding>
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workout.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workout.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/workout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625">
-              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.4814815">
+              <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -127,10 +127,10 @@
         <option value="$PROJECT_DIR$/engine/point_calculations.go" />
         <option value="$PROJECT_DIR$/controllers/workouts_view.go" />
         <option value="$PROJECT_DIR$/controllers/routes.go" />
-        <option value="$PROJECT_DIR$/templates/workout.html" />
         <option value="$PROJECT_DIR$/models/workout_response.go" />
         <option value="$PROJECT_DIR$/statistics/sub_mat.go" />
         <option value="$PROJECT_DIR$/engine/workout_one.go" />
+        <option value="$PROJECT_DIR$/templates/workout.html" />
       </list>
     </option>
   </component>
@@ -872,19 +872,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/workout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625">
-          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/workout_response.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+          <folding>
+            <element signature="e#16#154#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -896,13 +898,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
+    <entry file="file://$PROJECT_DIR$/templates/workout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12587413">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-          <folding>
-            <element signature="e#16#154#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.4814815">
+          <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
