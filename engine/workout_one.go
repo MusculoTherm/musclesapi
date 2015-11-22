@@ -47,7 +47,7 @@ func populateWorkoutOneTitle(req *models.WorkoutResponse) {
 func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	var sumIncreased int64 = 0
 	for _, p := range req.DeltaPoints {
-		sumIncreased += math.Abs(p.MedianTemp)
+		sumIncreased += statistics.Round(math.Abs(float64(p.MedianTemp)))
 	}
 	meanIncrease := float64(sumIncreased) / float64(len(req.DeltaPoints))
 	var sumMins int64
