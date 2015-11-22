@@ -6,10 +6,8 @@ import (
 	"github.com/MusculoTherm/musclesapi/statistics"
 	"sort"
 	"strconv"
-"math"
+	"math"
 )
-
-var workoutOnePoints []string = []string{"L0", "L1", "L2", "L3", "L4", "L5", "R0", "R1", "R2", "R3", "R4", "R5"}
 
 func WorkoutOne(req models.WorkoutRequest) (models.WorkoutResponse, error) {
 	resp := models.WorkoutResponse{}
@@ -49,7 +47,7 @@ func populateWorkoutOneTitle(req *models.WorkoutResponse) {
 func populateWorkoutOneBody(req *models.WorkoutResponse) {
 	var sumIncreased int64 = 0
 	for _, p := range req.DeltaPoints {
-		sumIncreased += p.MedianTemp
+		sumIncreased += math.Abs(p.MedianTemp)
 	}
 	meanIncrease := float64(sumIncreased) / float64(len(req.DeltaPoints))
 	var sumMins int64

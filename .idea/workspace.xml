@@ -28,10 +28,10 @@
       <file leaf-file-name="workout_one.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61538464">
-              <caret line="65" column="91" selection-start-line="65" selection-start-column="91" selection-end-line="65" selection-end-column="91" />
+            <state vertical-scroll-proportion="0.12587413">
+              <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
               <folding>
-                <element signature="e#16#153#0" expanded="true" />
+                <element signature="e#16#154#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,7 +50,7 @@
       <file leaf-file-name="workout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/workout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-59.375">
+            <state vertical-scroll-proportion="-15.625">
               <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
               <folding />
             </state>
@@ -804,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07462686">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/workout.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -819,14 +811,6 @@
           <folding>
             <element signature="e#16#58#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/workout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-59.375">
-          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,6 +872,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/workout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/workout_response.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -896,12 +888,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07462686">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/engine/workout_one.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464">
-          <caret line="65" column="91" selection-start-line="65" selection-start-column="91" selection-end-line="65" selection-end-column="91" />
+        <state vertical-scroll-proportion="0.12587413">
+          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
           <folding>
-            <element signature="e#16#153#0" expanded="true" />
+            <element signature="e#16#154#0" expanded="true" />
           </folding>
         </state>
       </provider>
